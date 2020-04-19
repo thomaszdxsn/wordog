@@ -1,11 +1,36 @@
 /** 
  * this theme is copy from [hugo-theme-hello-friend-ng](https://github.com/rhazdon/hugo-theme-hello-friend-ng)
 */
-import React from 'react';
-import Link from 'next/link'
+import React, {useMemo} from 'react';
+import {useRouter} from "next/router";
+import Link from 'next/link';
+
 
 
 const Header: React.FC = () => {
+    const {pathname} = useRouter();
+    const breadcrumb = useMemo(() => {
+        const paths = pathname.slice(1).split('/');
+        // 这种实现不支持动态路由，但是目前不会在中间的 path 带有动态路由
+        return (
+            <>
+                <Link href={'/'} passHref><a>~</a></Link>
+                {paths.map((path, index) => index === paths.length - 1
+                ? <>/<span key={path}>{path}</span></>
+                : <>/<Link key={path} href={path} passHref><a>{path}</a></Link> </>)}
+                <style jsx>{`
+                    a {
+                        color: inherit;
+                        text-decoration: none;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                `}</style>
+            </>
+        )
+
+    }, [pathname]);
 
     return (
         <>
@@ -14,7 +39,7 @@ const Header: React.FC = () => {
                 <div className="breadcrumb">
                     <span className="mark">></span>
                     <span className="text">
-                        <Link href='/'><a>~</a></Link>/
+                        {breadcrumb}
                     </span>
                     <span className="cursor" />
                 </div>

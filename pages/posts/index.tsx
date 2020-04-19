@@ -1,6 +1,7 @@
 import React from 'react';
 import {NextPage, GetStaticProps} from 'next'
 
+import {BasicLayout} from "../../layouts";
 import {getPosts} from '../../utils';
 import {Post} from '../../interfaces';
 
@@ -11,14 +12,16 @@ interface Props {
 
 
 const PostsPage: NextPage<Props> = ({posts}) => (
-  <main>
-    {posts.map(post => (
-      <div key={post.slug}>
-          <h1>{post.title} - {post.date}</h1>
-      </div>
-    ))}
-  </main>
-)
+  <BasicLayout>
+    <main>
+      {posts.map(post => (
+        <div key={post.slug}>
+            <h1>{post.title} - {post.date}</h1>
+        </div>
+      ))}
+    </main>
+  </BasicLayout>
+);
 
 export default PostsPage
 
