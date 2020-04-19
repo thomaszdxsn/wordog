@@ -16,7 +16,7 @@ const PostsPage: NextPage<Props> = ({posts}) => (
     <main>
       {posts.map(post => (
         <div key={post.slug}>
-            <h1>{post.title} - {post.date}</h1>
+            <p>{post.title} - {post.date}</p>
         </div>
       ))}
     </main>

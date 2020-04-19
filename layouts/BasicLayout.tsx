@@ -3,6 +3,7 @@
 */
 import React, {useMemo} from 'react';
 import {useRouter} from "next/router";
+import Head from 'next/head';
 import Link from 'next/link';
 
 
@@ -37,7 +38,6 @@ const Header: React.FC = () => {
         <header>
             <div className="header-inner">
                 <div className="breadcrumb">
-                    <span className="mark">></span>
                     <span className="text">
                         {breadcrumb}
                     </span>
@@ -55,6 +55,7 @@ const Header: React.FC = () => {
         </header>
         <style jsx>{`
             header {
+                font-weight: 700;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -96,13 +97,9 @@ const Header: React.FC = () => {
                 display: flex;
                 align-items: center;
             }
-            .breadcrumb > .mark {
-                font-size: .8rem;
-                margin-right: 5px;
-            }
             .breadcrumb > .cursor {
                 height: 1rem;
-                width: 10px;
+                width: .5rem;
                 background-color: #fe5186;
                 margin-left: 5px;
                 animation: cursor 1s infinite;
@@ -134,6 +131,10 @@ const Footer: React.FC = () => (
 const BasicLayout: React.FC = ({children}) => {
     return (
         <>
+            <Head>
+              <title>Thomaszdxsn's blog</title>
+              <link rel="shortcut icon" href="/favicon.ico" />
+            </Head>
             <Header />
             <div className='content'>
                 {children}
@@ -161,6 +162,6 @@ const BasicLayout: React.FC = ({children}) => {
             `}</style>
         </>
     )
-}
+};
 
 export default BasicLayout;
