@@ -17,8 +17,8 @@ const Header: React.FC = () => {
             <>
                 <Link href={'/'} passHref><a>~</a></Link>
                 {paths.map((path, index) => index === paths.length - 1
-                ? <>/<span key={path}>{path}</span></>
-                : <>/<Link key={path} href={path} passHref><a>{path}</a></Link> </>)}
+                ? <span key={path}>/{path}</span>
+                : <span key={path}>/<Link key={path} href={path} passHref><a>{path}</a></Link> </span>)}
                 <style jsx>{`
                     a {
                         color: inherit;
@@ -125,7 +125,7 @@ const Footer: React.FC = () => (
         padding: 2rem 1rem;
     `}</style>
     </>
-)
+);
 
 
 const BasicLayout: React.FC = ({children}) => {

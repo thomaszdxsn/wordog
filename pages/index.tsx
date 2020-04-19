@@ -1,7 +1,8 @@
 import React from 'react';
-import {BasicLayout} from '../layouts';
+import Link from 'next/link'
 
-import {GithubIcon, HomeIcon, MailIcon, TwitterIcon} from '../assets'
+import {BasicLayout} from '../layouts';
+import {GithubIcon, ListIcon, MailIcon, TwitterIcon} from '../assets'
 import * as constants from '../constants';
 
 
@@ -10,17 +11,20 @@ const IndexPage = () => {
     <BasicLayout>
       <main>
         <h1>Thomaszdxsn's blog</h1>
-        <p className='quote'>I am king of programming</p>
+        <p className='quote'>{constants.BLOG_DESCRIPTION}</p>
         <div className="icon-container">
+          <Link href={'/posts'} passHref>
+            <a>
+              <ListIcon/>
+            </a>
+          </Link>
           <a href={constants.GITHUB_HOMEPAGE} target='_blank'>
             <GithubIcon />
           </a>
           <a href={constants.TWITTER_HOMEPAGE} target='_blank'>
             <TwitterIcon/>
           </a>
-          <a href={constants.BLOG_HOMEPAGE}>
-            <HomeIcon/>
-          </a>
+
           <a href={`mailto://${constants.EMAIL}`}>
             <MailIcon/>
           </a>
