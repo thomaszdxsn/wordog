@@ -22,6 +22,7 @@ const PostPage: NextPage<Props> = ({post}) => {
           main {
             display: block;
             max-width: 760px;
+            padding-top: 5rem;
           }
         `}</style>
       </BasicLayout>
