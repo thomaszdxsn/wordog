@@ -22,7 +22,7 @@ const verifyMetadata = (metadata: {[key: string]: string | Date}) => {
             metadata[key] = `${value.getFullYear()}-${value.getMonth() + 1}-${value.getDate()}`
         }
     })
-}
+};
 
 
 const parseFile = (path: string) => {
@@ -36,10 +36,10 @@ const parseFile = (path: string) => {
             slug: metadata.slug || metadata.title
         }
     } as Post
-}
+};
 
 
 
 export function getPosts(): Post[] {
-    return readPostsDir().map(path => parseFile(path))
+    return readPostsDir().filter(path => path.endsWith(".md")).map(path => parseFile(path))
 }

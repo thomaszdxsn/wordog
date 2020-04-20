@@ -13,3 +13,11 @@ declare module "parse-md" {
 
     export default (content: string) => parseResult
 }
+
+declare module 'github-markdown-css' {
+    interface IClassNames {
+        [className: string]: string
+    }
+    const classNames: IClassNames;
+    export = classNames;
+}

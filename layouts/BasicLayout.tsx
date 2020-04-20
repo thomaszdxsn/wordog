@@ -9,16 +9,16 @@ import Link from 'next/link';
 
 
 const Header: React.FC = () => {
-    const {pathname} = useRouter();
+    const {asPath} = useRouter();
     const breadcrumb = useMemo(() => {
-        const paths = pathname.slice(1).split('/');
+        const paths = asPath.slice(1).split('/');
         // 这种实现不支持动态路由，但是目前不会在中间的 path 带有动态路由
         return (
             <>
                 <Link href={'/'} passHref><a>~</a></Link>
                 {paths.map((path, index) => index === paths.length - 1
                 ? <span key={path}>/{path}</span>
-                : <span key={path}>/<Link key={path} href={path} passHref><a>{path}</a></Link> </span>)}
+                : <span key={path}>/<Link key={path} href={`/${path}`} passHref><a>{path}</a></Link> </span>)}
                 <style jsx>{`
                     a {
                         color: inherit;
@@ -31,7 +31,7 @@ const Header: React.FC = () => {
             </>
         )
 
-    }, [pathname]);
+    }, [asPath]);
 
     return (
         <>
@@ -141,7 +141,7 @@ const BasicLayout: React.FC = ({children}) => {
             </div>
             <Footer />
             <style jsx global>{`
-                body {
+                html {
                     font-family:"Noto Serif SC", serif;
                 }
 

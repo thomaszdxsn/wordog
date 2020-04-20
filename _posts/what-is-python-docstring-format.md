@@ -8,71 +8,78 @@ date: 2020-04-19
 
 # Python 的 docstring 标准格式是什么？
 
-写下这篇文章的原因是：想知道 docstring 的标准是什么，如果没有标准那么通用的惯例是什么？
+写下这篇文章的原因是：想知道 `docstring` 的标准是什么，如果没有标准那么通用的惯例是什么？
 
-首先我搜索了「python docstring specification」，找到一篇 [PEP257 — Docstring Conventions]。但是通篇读下来，只是介绍了 docstring 标准的用法，我在源代码中看到的那些格式没有在这里体现。
+首先我搜索了「python docstring specification」，找到一篇 [PEP257 — Docstring Conventions](https://www.python.org/dev/peps/pep-0257/ "PEP257")。但是通篇读下来，只是介绍了 docstring 标准的用法，我在源代码中看到的那些格式没有在这里体现。
 
-随后在 stackoverflow 找到我要的答案：[ What is the standard Python docstring format? ]
+随后在 stackoverflow 找到我要的答案：[ What is the standard Python docstring format? ](https://stackoverflow.com/questions/3898572/what-is-the-standard-python-docstring-format "What is the standard Python docstring format? ")
 
 ## 不同的风格
 
 - Epytext
 
-	这是从 `javadoc` 沿袭的一种风格，可以被 [Epydoc] 使用来生成文档。
+	这是从 `javadoc` 沿袭的一种风格，可以被 [Epydoc](http://epydoc.sourceforge.net/ "Epydoc文档") 使用来生成文档。
 
 	示例：
 
+	```python
 	"""
 	This is a javadoc style.
-	
+
 	@param param1: this is a first param
 	@param param2: this is a second param
 	@return: this is a description of what is returned
 	@raise keyError: raises an exception
 	"""
+	```
 
 - reST
 
-	目前使用最广的格式应该是 `reStructuredText(reST)`，通常配合 [Sphinx] 用来生成文档。
+	目前使用最广的格式应该是 `reStructuredText(reST)`，通常配合 [Sphinx](http://sphinx-doc.org/) 用来生成文档。
 
 	示例：
 
+	```python
 	"""
 	This is a reST style.
-	
+
 	:param param1: this is a first param
 	:param param2: this is a second param
 	:returns: this is a description of what is returned
 	:raises keyError: raises an exception
 	"""
+	```
 
 - Google
 
-	Google 公司有一套他们自己的格式，写在了[google/styleguide/pyguide.md]。通过插件，也可以使用 sphinx 来生成文档。
+	Google 公司有一套他们自己的格式，写在了[google/styleguide/pyguide.md](https://github.com/google/styleguide/blob/gh-pages/pyguide.md#38-comments-and-docstrings)。通过插件，也可以使用 sphinx 来生成文档。
 
 	示例：
 
+	```python
 	"""
 	This is a Google style.
-	
+
 	Args:
 		param1: This is the first param.
 		param2: This is a second param.
-	
+
 	Returns:
 		This is a description of what is returned.
-	
+
 	Raises:
 		KeyError: Raises an exception.
 	"""
-	
+	```
+
 - Numpydoc
 
 	Numpy 团队基于 Google style 发展了一套风格。
 
+	```python
 	"""
 	This is Numpy style.
-	
+
 	Parameters
 	----------
 	first : array_like
@@ -81,12 +88,12 @@ date: 2020-04-19
 		the 2nd param
 	third : {'value', 'other'}, optional
 		the 3rd param, by default 'value'
-	
+
 	Returns
 	-------
 	string
 		a value in a string
-	
+
 	Raises
 	------
 	KeyError
@@ -94,14 +101,15 @@ date: 2020-04-19
 	OtherError
 		when an other error
 	"""
+	```
 
 ## Pycharm 中生成 docstring stub
 
-Pycharm 在鼠标移动到函数名的时候会有一个 action ->「insert document string stub」，可以自动为函数生成基本的 docstring 格式。
+Pycharm 在鼠标移动到函数名的时候会有一个 action -\>「insert document string stub」，可以自动为函数生成基本的 docstring 格式。
 
 但是默认的格式不是固定的，最早我的电脑会生成 reST 格式，最近生成的却是 Epytext。
 
-通过 [Pycharm用户手册]可以查到是怎么设置默认的 docstring style：
+通过 [Pycharm用户手册](https://www.jetbrains.com/help/pycharm/settings-tools-python-integrated-tools.html)可以查到是怎么设置默认的 docstring style：
 
 - File | Settings | Tools | Python Integrated Tools for Windows and Linux
 - PyCharm | Preferences | Tools | Python Integrated Tools for macOS
@@ -118,3 +126,4 @@ Pycharm 在鼠标移动到函数名的时候会有一个 action ->「insert docu
 而 Django 只在需要的地方进行了描述（很多时候用的是普通的注释，写在相关代码的周围），并不是每个函数都有 docstring。
 
 并没有谁更正确之分，只要团队成员都接受，那就是正确的。
+
