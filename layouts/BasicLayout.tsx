@@ -48,7 +48,7 @@ const Header: React.FC = () => {
                         <a>about</a>
                     </Link>
                     <Link href="/posts" passHref>
-                        <a>posts</a>
+                        <a>blog</a>
                     </Link>
                 </nav>
             </div>
