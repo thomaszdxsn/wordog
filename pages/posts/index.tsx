@@ -25,7 +25,6 @@ const PostsPage: NextPage<Props> = ({posts}) => {
       },
       {} as {[year: string]: typeof posts}
   );
-  console.log(groupByPosts);
 
   return (
       <BasicLayout>
@@ -38,7 +37,7 @@ const PostsPage: NextPage<Props> = ({posts}) => {
                   <ul>
                     {posts.map(post => (
                       <li key={post.slug}>
-                        <Link href={`/posts/${post.slug}`} passHref>
+                        <Link href={'/posts/[slug]'} as={`/posts/${post.slug}`} passHref>
                           <a>
                             <span>{post.title}</span>
                             <span>{`${(post.date as Date).getMonth() + 1}月${(post.date as Date).getDate()}日`}</span>
