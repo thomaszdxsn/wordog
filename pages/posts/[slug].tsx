@@ -35,7 +35,7 @@ export default PostPage;
 export const getStaticProps: GetStaticProps<Props, {slug: string}> = async ({params}) => {
   const posts = getPosts();
   const {slug} = params!;
-  const post = posts.find(post => post.slug === slug)!
+  const post = posts.find(post => post.slug === slug)!;
   return {
     props: {
       post,
