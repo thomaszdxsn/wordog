@@ -3,7 +3,6 @@
 */
 import React, {useMemo} from 'react';
 import {useRouter} from "next/router";
-import Head from 'next/head';
 import Link from 'next/link';
 
 
@@ -11,7 +10,7 @@ import Link from 'next/link';
 const Header: React.FC = () => {
     const {asPath} = useRouter();
     const breadcrumb = useMemo(() => {
-        const paths = asPath.slice(1).split('/');
+        const paths = asPath.slice(1).split('?')[0].split('/');
         // 这种实现不支持动态路由，但是目前不会在中间的 path 带有动态路由
         return (
             <>
@@ -131,10 +130,6 @@ const Footer: React.FC = () => (
 const BasicLayout: React.FC = ({children}) => {
     return (
         <>
-            <Head>
-              <title>Thomaszdxsn's blog</title>
-              <link rel="shortcut icon" href="/favicon.ico" />
-            </Head>
             <Header />
             <div className='content'>
                 {children}
@@ -154,10 +149,10 @@ const BasicLayout: React.FC = ({children}) => {
             `}</style>
             <style jsx>{`
                 .content {
-                    display: flex;
-                    justify-content: center; 
-                    align-items: center;
-                    flex: 1;
+                    width: 100%;
+                    max-width: 800px;
+                    padding: .5rem;
+                    margin: 1rem auto;
                 }
             `}</style>
         </>

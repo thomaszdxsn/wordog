@@ -49,6 +49,8 @@ const IndexPage = () => {
         .icon-container {
           display: flex;
           justify-content: space-between;
+          width: 40%;
+          margin: 0 auto;
         }
         
         .icon-container > a {

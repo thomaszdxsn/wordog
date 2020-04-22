@@ -13,11 +13,9 @@ interface Props {
 
 
 const PostsPage: NextPage<Props> = ({posts}) => {
-  const groupByPosts = posts.map(
-      post => ({...post, date: new Date(post.date)})
-  ).reduce(
+  const groupByPosts = posts.reduce(
       (acc, curr) => {
-        const year = curr.date.getFullYear().toString();
+        const year = curr.date.split('-')[0];
         return {
             ...acc,
             [year]: [...(acc[year] || []), curr]
@@ -40,7 +38,7 @@ const PostsPage: NextPage<Props> = ({posts}) => {
                         <Link href={'/posts/[slug]'} as={`/posts/${post.slug}`} passHref>
                           <a>
                             <span>{post.title}</span>
-                            <span>{`${(post.date as Date).getMonth() + 1}月${(post.date as Date).getDate()}日`}</span>
+                            <span>{`${post.date.split('-')[1]}月${post.date.split('-')[2]}日`}</span>
                           </a>
                         </Link>
                       </li>

@@ -3,7 +3,7 @@ export interface Post {
     slug: string;
     author: string;
     content: string;
-    date: string | Date;
+    date: string;
     berif?: string;
     tag?: string[];
 }
