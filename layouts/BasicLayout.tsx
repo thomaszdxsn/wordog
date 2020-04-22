@@ -151,7 +151,7 @@ const BasicLayout: React.FC = ({children}) => {
                 .content {
                     width: 100%;
                     max-width: 760px;
-                    margin: 1rem auto;
+                    margin: 3rem auto;
                 }
             `}</style>
         </>
