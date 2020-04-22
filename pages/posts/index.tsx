@@ -83,7 +83,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       posts: posts.map(({content, ...rest}) => rest).sort(
-          (prev, curr) => prev.date > curr.date ? 1 : -1
+          (prev, curr) => prev.date < curr.date ? 1 : -1
       )
     }
   }
