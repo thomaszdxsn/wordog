@@ -1,7 +1,7 @@
 ---
 author: thomaszdxsn
-title: 如何为CRA项目进行多环境配置
-slug: how-to-setup-multi-environment-for-CRA
+title: 如何为 CRA 项目配置 staging 环境
+slug: how-to-setup-staging-environment-for-CRA
 tags: react
 date: 2020-04-21
 ---
@@ -25,7 +25,7 @@ CRA 项目通过 `.env` 文件提供配置支持。但是`.env`文件只支持�
 里面倒是提到一些间接的方法，我归纳一下主要有两种。
 
 1. 在不同环境编译的使用使用不同的命令/脚本/CI，来覆写配置文件/环境变量
-2. 使用 `customize-cra` 提供的 webpack 扩展功能，利用 webpack 的 define 插件来实现环境配置[^1]。
+2. 使用 `customize-cra` 提供的 webpack 扩展功能，[利用 webpack 的 define 插件来实现环境配置](https://github.com/arackaf/customize-cra/issues/44)。
 
 ## 覆盖配置文件
 
@@ -46,6 +46,3 @@ CRA 项目通过 `.env` 文件提供配置支持。但是`.env`文件只支持�
     "build:prod": "react-scripts build",
     "build:staging": "env-cmd -f .env.staging react-scripts build --profile",
 }
-```
-
-[^1]:	[如何配置 webpack DefinePlugin](https://github.com/arackaf/customize-cra/issues/44)
