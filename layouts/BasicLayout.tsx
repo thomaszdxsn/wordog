@@ -150,8 +150,7 @@ const BasicLayout: React.FC = ({children}) => {
             <style jsx>{`
                 .content {
                     width: 100%;
-                    max-width: 800px;
-                    padding: .5rem;
+                    max-width: 760px;
                     margin: 1rem auto;
                 }
             `}</style>
