@@ -6,10 +6,10 @@ tags: react
 date: 2020-04-21
 ---
 
-# 如何为 CRA 项目进行多环境配置
+# 如何为 CRA 项目配置 staging 环境
 
 > III. Config：Store config in the environment
-> > — From [The TWELVE-FACTOR App](https://12factor.net/config)
+> > [The TWELVE-FACTOR App](https://12factor.net/config)
 
 CRA 项目通过 `.env` 文件提供配置支持。但是`.env`文件只支持三种环境:
 
