@@ -14,6 +14,7 @@ const App: React.FC<AppProps> = ({Component, pageProps}) => {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="manifest" href="/manifest.json" />
           <link rel="shortcut icon" href="/favicon.ico" />
+          <link rel="apple-touch-icon" href="/favicon.ico" />
         </Head>
         <Component {...pageProps} />
       </>
