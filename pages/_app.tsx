@@ -12,6 +12,7 @@ const App: React.FC<AppProps> = ({Component, pageProps}) => {
         <Head>
           <title>Thomaszdxsn's blog</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="manifest" href="/manifest.json" />
           <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
         <Component {...pageProps} />
