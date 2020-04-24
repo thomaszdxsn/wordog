@@ -1,5 +1,6 @@
 import React from 'react';
 import {NextPage, GetStaticPaths, GetStaticProps} from "next";
+import {DiscussionEmbed} from "disqus-react";
 
 import {BasicLayout} from "../../layouts";
 import {getPosts} from "../../utils";
@@ -16,9 +17,22 @@ const PostPage: NextPage<Props> = ({post}) => {
       <BasicLayout>
         <main>
           <Markdown content={post.content} />
+          <section className='comment'>
+            <DiscussionEmbed
+                shortname={'thomaszdxsn-com'}
+                config={{
+                  url: 'thomszdxsn.com',
+                  identifier: post.slug,
+                  title: post.title
+                }}
+            />
+          </section>
         </main>
 
         <style jsx>{`
+          .comment {
+            margin-top: 2rem;
+          }
         `}</style>
       </BasicLayout>
   )

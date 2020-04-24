@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "babel-plugin-inline-react-svg": "^1.1.1",
+    "disqus-react": "^1.0.8",
     "isomorphic-unfetch": "3.0.0",
     "marked": "^0.8.2",
     "next": "latest",
