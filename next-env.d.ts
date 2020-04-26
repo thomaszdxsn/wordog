@@ -21,3 +21,9 @@ declare module 'github-markdown-css' {
     const classNames: IClassNames;
     export = classNames;
 }
+
+
+declare module '*.mdx' {
+    let MDXComponent: (props: any) => JSX.Element
+    export default MDXComponent
+}

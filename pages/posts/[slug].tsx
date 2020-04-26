@@ -31,7 +31,7 @@ const PostPage: NextPage<Props> = ({post}) => {
 
         <style jsx>{`
           .comment {
-            margin-top: 2rem;
+            margin-top: 5rem;
           }
         `}</style>
       </BasicLayout>
