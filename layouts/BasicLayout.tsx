@@ -17,7 +17,7 @@ export const Header: React.FC = () => {
                 <Link href={'/'} passHref><a>~</a></Link>
                 {paths.map((path, index) => index === paths.length - 1
                 ? <span key={path}>/{path}</span>
-                : <span key={path}>/<Link key={path} href={`/${path}`} passHref><a>{path}</a></Link> </span>)}
+                : <span key={path}>/<Link key={path} href={`/${path}`} passHref><a>{path}</a></Link></span>)}
                 <style jsx>{`
                     a {
                         color: inherit;
