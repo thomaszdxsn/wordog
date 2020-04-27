@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
     const {asPath} = useRouter();
     const breadcrumb = useMemo(() => {
         const paths = asPath.slice(1).split('?')[0].split('/');
