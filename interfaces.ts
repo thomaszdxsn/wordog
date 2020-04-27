@@ -7,3 +7,6 @@ export interface Post {
     berif?: string;
     tag?: string[];
 }
+
+
+export interface TechPost extends Post {};

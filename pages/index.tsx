@@ -13,7 +13,7 @@ const IndexPage = () => {
         <h1>Thomaszdxsn's blog</h1>
         <p className='quote'>{constants.BLOG_DESCRIPTION}</p>
         <div className="icon-container">
-          <Link href={'/posts'} passHref>
+          <Link href={'/tech'} passHref>
             <a>
               <ListIcon/>
             </a>
