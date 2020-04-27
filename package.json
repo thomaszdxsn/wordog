@@ -2,9 +2,9 @@
   "name": "with-typescript",
   "version": "1.0.0",
   "scripts": {
-    "build-metadata": "ts-node utils/mdx.ts",
-    "dev": "next",
-    "build": "next build",
+    "build-metadata": "node build-metadata.js",
+    "dev": "yarn run build-metadata && next",
+    "build": "yarn run build-metadata && next build",
     "start": "next start",
     "type-check": "tsc"
   },
@@ -16,14 +16,11 @@
     "disqus-react": "^1.0.8",
     "extract-mdx-metadata": "^1.0.0",
     "isomorphic-unfetch": "3.0.0",
-    "marked": "^0.8.2",
     "next": "latest",
     "next-pwa": "^2.3.3",
-    "parse-md": "^2.0.4",
     "prism-react-renderer": "^1.1.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-highlight": "^0.12.0",
     "react-live": "^2.2.2"
   },
   "devDependencies": {

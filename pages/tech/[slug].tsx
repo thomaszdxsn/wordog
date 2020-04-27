@@ -4,17 +4,19 @@ import dynamic from "next/dynamic";
 import {DiscussionEmbed} from "disqus-react";
 
 import {ArticleLayout} from "../../layouts";
+import {getPostsMeta} from "../../utils/articles";
+import {Metadata} from "../../interfaces";
 
 
 interface Props {
-  slug: string;
+  metadata: Metadata
 }
 
-const PostPage: NextPage<Props> = ({slug}) => {
+const PostPage: NextPage<Props> = ({metadata}) => {
   const Content = dynamic(
-      () => import(`../../articles/tech/${slug}.mdx`),
+      () => import(`../../articles/tech/${metadata.filename}`),
       {ssr: false}
-  )
+  );
   return (
       <ArticleLayout>
         <main>
@@ -24,8 +26,8 @@ const PostPage: NextPage<Props> = ({slug}) => {
                 shortname={'thomaszdxsn-com'}
                 config={{
                   url: 'https://thomaszdxsn.com',
-                  identifier: slug,
-                  title: slug
+                  identifier: metadata.slug,
+                  title: metadata.title
                 }}
             />
           </section>
@@ -44,20 +46,20 @@ export default PostPage;
 
 
 export const getStaticProps: GetStaticProps<Props, {slug: string}> = async ({params}) => {
-  // const posts = getPosts();
-  // const postDir = join(process.cwd(), 'articles');
-  const {slug} = params!;
+  const slug = params!.slug!;
+  const metadataArr = getPostsMeta().tech;
+  const metadata = metadataArr.find(meta => meta.slug === slug)!;
   return {
     props: {
-      slug,
+      metadata
     }
   }
-}
+};
 
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = ['how-to-setup-staging-environment-for-CRA'];
-  const paths = posts.map(post => ({params: {slug: post}}));
+  const metadata = getPostsMeta().tech;
+  const paths = metadata.map(meta => ({params: {slug: meta.slug}}));
 
   return {
     paths,

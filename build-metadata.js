@@ -7,8 +7,8 @@ const POSTS_DIR = join(process.cwd(), 'articles');
 
 async function extractMete(path) {
     const content = fs.readFileSync(path, {encoding: 'utf8'});
-    const relativePath = path.match('/articles.*?\.mdx')[0]
-    return extractMdxMeta(content).then(r => ({...r, path: relativePath}))
+    const filename = path.split('/').pop();
+    return extractMdxMeta(content).then(r => ({...r, filename}))
 }
 
 
@@ -29,7 +29,7 @@ async function main() {
     const metaFile = join(POSTS_DIR, 'metadata.json')
     const metadata = {
         tech: await getTechPostsMetadata()
-    }
+    };
     fs.writeFileSync(metaFile, JSON.stringify(metadata), 'utf-8')
 }
 

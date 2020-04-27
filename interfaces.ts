@@ -10,3 +10,14 @@ export interface Post {
 
 
 export interface TechPost extends Post {};
+
+
+export interface Metadata {
+    author: string;
+    date: string;
+    title: string;
+    slug: string;
+    filename: string;
+    tags: string[]
+}
+
