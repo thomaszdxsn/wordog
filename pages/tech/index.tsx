@@ -3,7 +3,7 @@ import {NextPage} from "next";
 import Link from "next/link";
 import {BasicLayout} from "../../layouts";
 
-import {getPostsMeta} from '../../utils/articles'
+import {getPostsMeta} from '../../server-utils'
 import {Metadata} from "../../interfaces";
 
 

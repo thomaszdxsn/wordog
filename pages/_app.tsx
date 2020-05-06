@@ -1,6 +1,9 @@
 import React from 'react';
 import {AppProps} from "next/app";
+import {useRouter} from "next/router";
 import Head from "next/head";
+import {DefaultSeo} from "next-seo/lib";
+import {buildURL} from "../utils";
 
 const GoogleAnalyticsScript: React.FC = () => {
 
@@ -21,6 +24,8 @@ const GoogleAnalyticsScript: React.FC = () => {
 
 
 const App: React.FC<AppProps> = ({Component, pageProps}) => {
+  const router = useRouter();
+
   return (
       <>
         <Head>
@@ -30,8 +35,18 @@ const App: React.FC<AppProps> = ({Component, pageProps}) => {
           <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="apple-touch-icon" href="/favicon.ico" />
           {process.env.NODE_ENV === 'production' && <GoogleAnalyticsScript />}
-
         </Head>
+        <DefaultSeo
+            openGraph={{
+              url: buildURL(router.asPath),
+            }}
+            twitter={{
+              handle: '@thomaszdxsn',
+              site: '@thomaszdxsn',
+              cardType: 'summary_large_image',
+            }}
+            titleTemplate={'%s | Thomaszdxsn\'s blog'}
+        />
         <Component {...pageProps} />
       </>
   )

@@ -12,6 +12,15 @@ export interface Post {
 export interface TechPost extends Post {};
 
 
+
+interface OgImage {
+    url: string;
+    width?: number;
+    height?: number;
+    alt?: string;
+}
+
+
 export interface Metadata {
     author: string;
     date: string;
@@ -20,5 +29,6 @@ export interface Metadata {
     filename: string;
     tags: string[];
     description?: string;
+    ogImages?: OgImage[];
 }
 

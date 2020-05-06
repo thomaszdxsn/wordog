@@ -1,0 +1,33 @@
+export const meta = {
+    author: 'thomaszdxsn',
+    title: '从 Next-SEO 入门 SEO',
+    slug: 'learning-seo-from-next-seo',
+    tags: ['SEO', 'next-seo', 'opengraph'],
+    date: '2020-05-06',
+    description: 'SEO内容很宽泛，不如从一个工具库来入门',
+    ogImages: [{
+        url: "https://thomaszdxsn.com/images/opengraph-example.jpg"
+    }]
+}
+
+# 从 Next-SEO 入门 SEO
+
+SEO 即搜索引擎优化，不在这里过多介绍。以前我认为 SEO 就是给搜索引擎公司钱，提供一些 meta 标签，需要 SSR 来渲染。
+
+今天使用了 [next-seo] 这个库，帮我打开了新世界。为什么 Google 搜索一些网站会显示一大块，原来使用了 JSON-LD 优化。为什么 twitter/wechat 分享链接的时候，有些网站有文字描述，有图标显示，原来是 Open Graph协议实现的。
+
+## Open Graph
+
+![opengraph-example](/images/opengraph-example.jpg)
+
+一些网站转发到微信，会以卡片的形式呈现。我们看看它的源码是怎样的：
+
+![opengraph-source](/images/opengraph-source.png)
+
+这个 `og:` 开头的 `meta` 属性，即 OpenGraph 协议。
+
+根据 [OpenGraph官网]描述:
+
+> The Open Graph protocol enables any web page to become a rich object in a social graph. For instance, this is used on Facebook to allow any web page to have the same functionality as any other object on Facebook.
+
+这个协议是为了让页面在 App 中具有良好的预览效果，而不是用一段链接把用户吓跑。
