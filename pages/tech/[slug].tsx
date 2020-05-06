@@ -2,9 +2,10 @@ import React from 'react';
 import {NextPage, GetStaticProps, GetStaticPaths} from "next";
 import dynamic from "next/dynamic";
 import {DiscussionEmbed} from "disqus-react";
+import {NextSeo} from 'next-seo';
 
 import {ArticleLayout} from "../../layouts";
-import {getPostsMeta} from "../../utils/articles";
+import {getPostsMeta} from "../../utils";
 import {Metadata} from "../../interfaces";
 
 
@@ -19,6 +20,10 @@ const PostPage: NextPage<Props> = ({metadata}) => {
   );
   return (
       <ArticleLayout>
+        <NextSeo
+          title={metadata.title}
+          description={metadata.description}
+        />
         <main>
           <Content />
           <section className='comment'>

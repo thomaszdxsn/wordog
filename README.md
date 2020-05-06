@@ -1,6 +1,12 @@
 # Wordog
 
 
+## SEO
+
+-[x] robots.txt
+-[x] sitemap
+
+
 ## MDX
 
 本博客使用 [MDX](https://mdxjs.com/) 作为文章的主要格式。

@@ -18,6 +18,7 @@ export interface Metadata {
     title: string;
     slug: string;
     filename: string;
-    tags: string[]
+    tags: string[];
+    description?: string;
 }
 
