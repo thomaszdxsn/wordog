@@ -5,7 +5,7 @@ import CodeBlock from "./CodeBlock";
 export default {title: 'CodeBlock'}
 
 
-export const Example = () => {
+export const Normal = () => {
   return (
       <CodeBlock>
         {`
