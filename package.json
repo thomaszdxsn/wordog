@@ -6,12 +6,14 @@
     "dev": "yarn run prebuild && next",
     "build": "yarn run prebuild && next build",
     "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "storybook": "start-storybook"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.5.9",
     "@mdx-js/react": "^1.5.9",
     "@next/mdx": "^9.3.5",
+    "@storybook/react": "^5.3.18",
     "babel-plugin-inline-react-svg": "^1.1.1",
     "disqus-react": "^1.0.8",
     "extract-mdx-metadata": "^1.0.0",
@@ -25,14 +27,22 @@
     "react-live": "^2.2.2"
   },
   "devDependencies": {
+    "@storybook/addon-info": "^5.3.18",
+    "@types/jest": "^25.2.1",
     "@types/marked": "^0.7.4",
     "@types/mdx-js__react": "^1.5.1",
+    "@types/next-seo": "^1.10.0",
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
     "@types/react-highlight": "^0.12.2",
-    "typescript": "3.7.3",
-    "@types/next-seo": "^1.10.0"
+    "babel-loader": "^8.1.0",
+    "babel-preset-react-app": "^9.1.2",
+    "jest": "^26.0.1",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "ts-jest": "^25.5.1",
+    "ts-loader": "^7.0.3",
+    "typescript": "^3.8.3"
   },
   "license": "ISC"
 }
