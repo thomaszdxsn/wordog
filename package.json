@@ -2,9 +2,9 @@
   "name": "with-typescript",
   "version": "1.0.0",
   "scripts": {
-    "build-metadata": "node build-metadata.js",
-    "dev": "yarn run build-metadata && next",
-    "build": "yarn run build-metadata && next build",
+    "prebuild": "node prebuild.js",
+    "dev": "yarn run prebuild && next",
+    "build": "yarn run prebuild && next build",
     "start": "next start",
     "type-check": "tsc"
   },
@@ -18,6 +18,7 @@
     "isomorphic-unfetch": "3.0.0",
     "next": "latest",
     "next-pwa": "^2.3.3",
+    "next-seo": "^4.4.0",
     "prism-react-renderer": "^1.1.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -30,8 +31,8 @@
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
     "@types/react-highlight": "^0.12.2",
-    "ts-node": "^8.9.1",
-    "typescript": "3.7.3"
+    "typescript": "3.7.3",
+    "@types/next-seo": "^1.10.0"
   },
   "license": "ISC"
 }

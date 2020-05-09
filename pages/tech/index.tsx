@@ -3,15 +3,13 @@ import {NextPage} from "next";
 import Link from "next/link";
 import {BasicLayout} from "../../layouts";
 
-import {getPostsMeta} from '../../utils/articles'
+import {getPostsMeta} from '../../server-utils'
 import {Metadata} from "../../interfaces";
 
 
 interface Props {
   metadata: Exclude<Metadata, 'content'>[]
 }
-
-
 
 
 const TechPosts: NextPage<Props> = ({metadata}) => {
@@ -35,7 +33,7 @@ const TechPosts: NextPage<Props> = ({metadata}) => {
                 <section key={year}>
                   <h2>{year}</h2>
                   <ul>
-                    {posts.map(post => (
+                    {posts.sort((prev, curr) => prev.date < curr.date ? 1 : -1).map(post => (
                         <li key={post.slug}>
                           <Link href={'/tech/[slug]'} as={`/tech/${post.slug}`} passHref>
                             <a>

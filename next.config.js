@@ -3,6 +3,9 @@ const withMDX = require('@next/mdx')({
     extension: /\.mdx?$/
 });
 
+
+
+
 const settings = {
     pwa: {
         dest: 'public'
