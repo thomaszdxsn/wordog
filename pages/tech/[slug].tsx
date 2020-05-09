@@ -35,7 +35,7 @@ const PostPage: NextPage<Props> = ({metadata}) => {
             <DiscussionEmbed
                 shortname={'thomaszdxsn-com'}
                 config={{
-                  url: 'https://thomaszdxsn.com',
+                  url: `https://thomaszdxsn.com/tech/${metadata.slug}`,
                   identifier: metadata.slug,
                   title: metadata.title
                 }}
