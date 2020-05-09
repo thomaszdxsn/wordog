@@ -35,6 +35,7 @@ const App: React.FC<AppProps> = ({Component, pageProps}) => {
           <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="apple-touch-icon" href="/favicon.ico" />
           {process.env.NODE_ENV === 'production' && <GoogleAnalyticsScript />}
+          <script src="https://profile.codersrank.io/widget/widget.js" async />
         </Head>
         <DefaultSeo
             openGraph={{

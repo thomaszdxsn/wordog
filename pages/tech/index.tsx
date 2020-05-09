@@ -12,8 +12,6 @@ interface Props {
 }
 
 
-
-
 const TechPosts: NextPage<Props> = ({metadata}) => {
   const groupByPosts = metadata.reduce(
       (acc, curr) => {
