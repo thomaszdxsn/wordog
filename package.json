@@ -15,7 +15,6 @@
     "@next/mdx": "^9.3.5",
     "@storybook/react": "^5.3.18",
     "babel-plugin-inline-react-svg": "^1.1.1",
-    "disqus-react": "^1.0.8",
     "extract-mdx-metadata": "^1.0.0",
     "isomorphic-unfetch": "3.0.0",
     "next": "latest",

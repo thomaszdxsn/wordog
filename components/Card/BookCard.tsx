@@ -14,11 +14,11 @@ interface Props {
 
 
 const BookCard: React.FC<Props> = props => {
-  const {bgColor='#FFF', color='#000', name, author, brief, imageUrl, rate, doubanUrl} = props;
+  const {bgColor='#333', color='#fff', name, author, brief, imageUrl, rate, doubanUrl} = props;
   return (
    <div className={'container'}>
      <div className='douban-rate'>
-       <p className={'rate-stars'}>{makeStarRank(Math.floor(rate / 2))}</p>
+       <p className={'rate-stars'}>{makeStarRank(Math.ceil(rate / 2))}</p>
        <p className={'rate-score'}>{rate}</p>
      </div>
      <a href={doubanUrl} target='_blank'>

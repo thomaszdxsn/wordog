@@ -1,7 +1,6 @@
 import React from 'react';
 import {NextPage, GetStaticProps, GetStaticPaths} from "next";
 import dynamic from "next/dynamic";
-import {DiscussionEmbed} from "disqus-react";
 import {NextSeo} from 'next-seo';
 
 import {ArticleLayout} from "../../layouts";
@@ -31,23 +30,7 @@ const PostPage: NextPage<Props> = ({metadata}) => {
         />
         <main>
           <Content />
-          <section className='comment'>
-            <DiscussionEmbed
-                shortname={'thomaszdxsn-com'}
-                config={{
-                  url: `https://thomaszdxsn.com/tech/${metadata.slug}`,
-                  identifier: metadata.slug,
-                  title: metadata.title
-                }}
-            />
-          </section>
         </main>
-
-        <style jsx>{`
-          .comment {
-            margin-top: 5rem;
-          }
-        `}</style>
       </ArticleLayout>
   )
 };
