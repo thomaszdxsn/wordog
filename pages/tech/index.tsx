@@ -67,6 +67,7 @@ const TechPosts: NextPage<Props> = ({metadata}) => {
           li > a {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
             color: inherit;
             text-decoration: none;
           }

@@ -1,5 +1,6 @@
 import React from 'react';
 // import {NpmIcon, GithubIcon} from "../../assets";
+import {makeStarRank} from "../../utils";
 
 type Rate = 1 | 2 | 3 | 4 | 5
 type RateFacade = keyof Props['rate'];
@@ -27,10 +28,6 @@ function translateRateFacade(rateKey: RateFacade) {
   }
 }
 
-function formatRate(rate: Rate) {
-  return Array.from({length: rate}).fill('⭐️').join('');
-}
-
 
 // TODO: how can i import a SVG with proper scale
 const NpmCard: React.FC<Props> = props => {
@@ -52,7 +49,7 @@ const NpmCard: React.FC<Props> = props => {
          {Object.entries(rate).map(([facade, rate]) => (
           <tr key={facade}>
             <td>{translateRateFacade(facade as RateFacade)}</td>
-            <td>{formatRate(rate)}</td>
+            <td>{makeStarRank(rate)}</td>
           </tr>
          ))}
        </tbody>

@@ -42,6 +42,7 @@ const RepostCard: React.FC<Props> = props => {
           width: 100%;
           display: flex;
           justify-content: space-between;
+          flex-wrap: wrap;
         }
         
         .link-url {
