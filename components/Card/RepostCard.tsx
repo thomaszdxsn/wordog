@@ -1,22 +1,25 @@
 import React from 'react';
-import Tag from './Tag'
+import Tag from '../Tag'
 
 interface Props {
   title: string;
   link: string;
   tags?: string[];
+  estimateMin?: number;
 }
 
 
 // TODO 1: 加入预计阅读时间
-// TODO 2: 加入阅读次数
-const ReportLink: React.FC<Props> = props => {
-  const {children, title, link, tags} = props;
+const RepostCard: React.FC<Props> = props => {
+  const {children, title, link, tags, estimateMin} = props;
   const linkDomain = new URL(link).hostname;
   return (
     <article>
       <h3 className='link-title'>{title}</h3>
-      <a href={link} className='link-url' target='_blank'>{`🔗链接：${linkDomain}`}</a>
+      <p className={'link-info'}>
+        <a href={link} className='link-url' target='_blank'>{`🔗链接：${linkDomain}`}</a>
+        {estimateMin && <span>⏳大约 {estimateMin} 分钟</span>}
+      </p>
       <div className={'link-brief'}>
         {children}
       </div>
@@ -33,9 +36,15 @@ const ReportLink: React.FC<Props> = props => {
         .link-title {
           margin: .5rem 0;
         }
+        .link-info {
+          margin: 0;
+          padding: .5rem 0;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+        }
         
         .link-url {
-          padding: 1rem 0;
           text-decoration: none;
         }
         a.link-url:visited {
@@ -52,4 +61,4 @@ const ReportLink: React.FC<Props> = props => {
   )
 };
 
-export default ReportLink;
+export default RepostCard;

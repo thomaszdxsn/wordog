@@ -1,6 +1,7 @@
 module.exports = {
     stories: [
         '../components/*.stories.[tj]sx',
+        '../components/**/*.stories.[tj]sx',
     ],
     webpackFinal: async config => {
         config.module.rules.push({
