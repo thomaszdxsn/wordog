@@ -1447,7 +1447,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.0", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.0", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.9.2":
   version "7.9.6"
   resolved "https://registry.npm.taobao.org/@babel/runtime/download/@babel/runtime-7.9.6.tgz?cache=0&sync_timestamp=1588186030503&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
   integrity sha1-qRAutcre3z8x0IqezylK94J+op8=
@@ -2052,6 +2052,26 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@storybook/addon-actions@^5.3.18":
+  version "5.3.18"
+  resolved "https://registry.npm.taobao.org/@storybook/addon-actions/download/@storybook/addon-actions-5.3.18.tgz#e3e3b1475cebc9bdd2d563822fba9ac662b2601a"
+  integrity sha1-4+OxR1zryb3S1WOCL7qaxmKyYBo=
+  dependencies:
+    "@storybook/addons" "5.3.18"
+    "@storybook/api" "5.3.18"
+    "@storybook/client-api" "5.3.18"
+    "@storybook/components" "5.3.18"
+    "@storybook/core-events" "5.3.18"
+    "@storybook/theming" "5.3.18"
+    core-js "^3.0.1"
+    fast-deep-equal "^2.0.1"
+    global "^4.3.2"
+    polished "^3.3.1"
+    prop-types "^15.7.2"
+    react "^16.8.3"
+    react-inspector "^4.0.0"
+    uuid "^3.3.2"
+
 "@storybook/addon-info@^5.3.18":
   version "5.3.18"
   resolved "https://registry.npm.taobao.org/@storybook/addon-info/download/@storybook/addon-info-5.3.18.tgz#2b02c43eeb79770781eea82104c32a4f12a72da0"
@@ -2071,6 +2091,42 @@
     react-element-to-jsx-string "^14.0.2"
     react-is "^16.8.3"
     react-lifecycles-compat "^3.0.4"
+    util-deprecate "^1.0.2"
+
+"@storybook/addon-storysource@^5.3.18":
+  version "5.3.18"
+  resolved "https://registry.npm.taobao.org/@storybook/addon-storysource/download/@storybook/addon-storysource-5.3.18.tgz#003374d76c0898c3b74aa4cd008f444eb6b63c68"
+  integrity sha1-ADN012wImMO3SqTNAI9ETra2PGg=
+  dependencies:
+    "@storybook/addons" "5.3.18"
+    "@storybook/components" "5.3.18"
+    "@storybook/router" "5.3.18"
+    "@storybook/source-loader" "5.3.18"
+    "@storybook/theming" "5.3.18"
+    core-js "^3.0.1"
+    estraverse "^4.2.0"
+    loader-utils "^1.2.3"
+    prettier "^1.16.4"
+    prop-types "^15.7.2"
+    react-syntax-highlighter "^11.0.2"
+    regenerator-runtime "^0.13.3"
+    util-deprecate "^1.0.2"
+
+"@storybook/addon-viewport@^5.3.18":
+  version "5.3.18"
+  resolved "https://registry.npm.taobao.org/@storybook/addon-viewport/download/@storybook/addon-viewport-5.3.18.tgz#9cfeb93e473845436e0c7fb74d590305ff7ef48e"
+  integrity sha1-nP65Pkc4RUNuDH+3TVkDBf9+9I4=
+  dependencies:
+    "@storybook/addons" "5.3.18"
+    "@storybook/api" "5.3.18"
+    "@storybook/client-logger" "5.3.18"
+    "@storybook/components" "5.3.18"
+    "@storybook/core-events" "5.3.18"
+    "@storybook/theming" "5.3.18"
+    core-js "^3.0.1"
+    global "^4.3.2"
+    memoizerific "^1.11.3"
+    prop-types "^15.7.2"
     util-deprecate "^1.0.2"
 
 "@storybook/addons@5.3.18":
@@ -2333,6 +2389,22 @@
     memoizerific "^1.11.3"
     qs "^6.6.0"
     util-deprecate "^1.0.2"
+
+"@storybook/source-loader@5.3.18":
+  version "5.3.18"
+  resolved "https://registry.npm.taobao.org/@storybook/source-loader/download/@storybook/source-loader-5.3.18.tgz#39ba28d9664ab8204d6b04ee757772369931e7e5"
+  integrity sha1-Oboo2WZKuCBNawTudXdyNpkx5+U=
+  dependencies:
+    "@storybook/addons" "5.3.18"
+    "@storybook/client-logger" "5.3.18"
+    "@storybook/csf" "0.0.1"
+    core-js "^3.0.1"
+    estraverse "^4.2.0"
+    global "^4.3.2"
+    loader-utils "^1.2.3"
+    prettier "^1.16.4"
+    prop-types "^15.7.2"
+    regenerator-runtime "^0.13.3"
 
 "@storybook/theming@5.3.18":
   version "5.3.18"
@@ -7339,6 +7411,14 @@ is-docker@^2.0.0:
   resolved "https://registry.npm.taobao.org/is-docker/download/is-docker-2.0.0.tgz#2cb0df0e75e2d064fe1864c37cdeacb7b2dcf25b"
   integrity sha1-LLDfDnXi0GT+GGTDfN6st7Lc8ls=
 
+is-dom@^1.0.9:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/is-dom/download/is-dom-1.1.0.tgz#af1fced292742443bb59ca3f76ab5e80907b4e8a"
+  integrity sha1-rx/O0pJ0JEO7Wco/dqtegJB7Too=
+  dependencies:
+    is-object "^1.0.1"
+    is-window "^1.0.2"
+
 is-extendable@^0.1.0, is-extendable@^0.1.1:
   version "0.1.1"
   resolved "https://registry.npm.taobao.org/is-extendable/download/is-extendable-0.1.1.tgz#62b110e289a471418e3ec36a617d472e301dfc89"
@@ -7452,6 +7532,11 @@ is-obj@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/is-obj/download/is-obj-2.0.0.tgz#473fb05d973705e3fd9620545018ca8e22ef4982"
   integrity sha1-Rz+wXZc3BeP9liBUUBjKjiLvSYI=
+
+is-object@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/is-object/download/is-object-1.0.1.tgz#8952688c5ec2ffd6b03ecc85e769e02903083470"
+  integrity sha1-iVJojF7C/9awPsyF52ngKQMINHA=
 
 is-path-cwd@^2.0.0:
   version "2.2.0"
@@ -7573,6 +7658,11 @@ is-whitespace-character@^1.0.0:
   version "1.0.4"
   resolved "https://registry.npm.taobao.org/is-whitespace-character/download/is-whitespace-character-1.0.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fis-whitespace-character%2Fdownload%2Fis-whitespace-character-1.0.4.tgz#0858edd94a95594c7c9dd0b5c174ec6e45ee4aa7"
   integrity sha1-CFjt2UqVWUx8ndC1wXTsbkXuSqc=
+
+is-window@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npm.taobao.org/is-window/download/is-window-1.0.2.tgz#2c896ca53db97de45d3c33133a65d8c9f563480d"
+  integrity sha1-LIlspT25feRdPDMTOmXYyfVjSA0=
 
 is-windows@^1.0.2:
   version "1.0.2"
@@ -10171,6 +10261,11 @@ prepend-http@^1.0.0:
   resolved "https://registry.npm.taobao.org/prepend-http/download/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
 
+prettier@^1.16.4:
+  version "1.19.1"
+  resolved "https://registry.npm.taobao.org/prettier/download/prettier-1.19.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fprettier%2Fdownload%2Fprettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
+  integrity sha1-99f1/4qc2HKnvkyhQglZVqYHl8s=
+
 pretty-bytes@^5.3.0:
   version "5.3.0"
   resolved "https://registry.npm.taobao.org/pretty-bytes/download/pretty-bytes-5.3.0.tgz#f2849e27db79fb4d6cfe24764fc4134f165989f2"
@@ -10603,6 +10698,15 @@ react-hotkeys@2.0.0:
   resolved "https://registry.npm.taobao.org/react-hotkeys/download/react-hotkeys-2.0.0.tgz#a7719c7340cbba888b0e9184f806a9ec0ac2c53f"
   integrity sha1-p3Gcc0DLuoiLDpGE+Aap7ArCxT8=
   dependencies:
+    prop-types "^15.6.1"
+
+react-inspector@^4.0.0:
+  version "4.0.1"
+  resolved "https://registry.npm.taobao.org/react-inspector/download/react-inspector-4.0.1.tgz#0f888f78ff7daccbc7be5d452b20c96dc6d5fbb8"
+  integrity sha1-D4iPeP99rMvHvl1FKyDJbcbV+7g=
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+    is-dom "^1.0.9"
     prop-types "^15.6.1"
 
 react-is@16.8.6:

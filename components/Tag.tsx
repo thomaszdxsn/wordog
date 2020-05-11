@@ -13,7 +13,7 @@ const Tag: React.FC<Props> = ({tagName}) => {
      🏷{tagName}
      <style jsx>{`
       margin-right: 0.3rem;
-      padding: .2rem;
+      padding: .2rem .4rem;
       background-color: rgb(6, 95, 212);
       color: #fff;
       border-radius: 10%;

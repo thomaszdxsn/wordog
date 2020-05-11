@@ -54,7 +54,7 @@ const BookCard: React.FC<Props> = props => {
          transform: rotate(45deg);
          display: inline-block;
          position: absolute;
-         top: 1rem;
+         top: 2rem;
          right: 3rem;
       }
       .book-cover {

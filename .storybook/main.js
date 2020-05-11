@@ -1,4 +1,9 @@
 module.exports = {
+    addons: [
+        '@storybook/addon-actions/register',
+        '@storybook/addon-storysource',
+        '@storybook/addon-viewport/register',
+    ],
     stories: [
         '../components/*.stories.[tj]sx',
         '../components/**/*.stories.[tj]sx',
