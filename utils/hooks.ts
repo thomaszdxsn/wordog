@@ -12,7 +12,7 @@ export function usePercentScrollAsTitle () {
       const docHeight = document.body.offsetHeight;
       const winHeight = window.innerHeight;
       const scrollPercent = scrollTop / (docHeight - winHeight);
-      const scrollPercentRounded = Math.round(scrollPercent * 100);
+      const scrollPercentRounded = Math.round(scrollPercent * 100)
       document.title = `(${scrollPercentRounded <= 100 ? scrollPercentRounded : 100}%) ${originTitle}`;
     };
     window.addEventListener('scroll',  listener);
