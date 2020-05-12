@@ -1,0 +1,85 @@
+import {RepostCard} from '../../components'
+
+export const meta = {
+    author: 'thomaszdxsn',
+    title: '阅读日报第 3 期',
+    slug: '2020-05-12-daily-news',
+    tags: ['Interface-In-Game', 'cookiecutter'],
+    date: '2020-05-12',
+    description: '什么是noonpener属性；MIT推出一门CS工具课程；MDX的使用案例'
+}
+
+# 阅读日报第 3 期
+
+
+<RepostCard
+    name="慎用 target='_blank'"
+    link="https://juejin.im/post/5eb8ed20e51d454db55fb353"
+    tags={["Web安全"]}
+    estimateMin={3}
+>
+
+实际上是对跨域域名慎用 `target="_blank"`，否则打开新窗口后，可以通过 window.opener 获取来源网站的 window 对象。
+
+如果一定要用，可以使用 `rel="noopener"` 属性来避免生成 opener 对象.
+
+</RepostCard>
+
+<RepostCard
+    name="Twitter[JoshWComeau]: MDX examples"
+    link="https://twitter.com/JoshWComeau/status/1243136771652751360"
+    tags={["mdx"]}
+    estimateMin={5}
+>
+
+Twitter 用户介绍的 MDX 使用实例。包含 `<Asterisk>`, `<Sidenote>`, `<VideoGif>` 等组件很适合用于博客文章中。
+
+这是他的[博客](https://joshwcomeau.com/)。
+
+</RepostCard>
+
+
+<RepostCard
+    name="CSS.gg"
+    link="https://css.gg/"
+    tags={['icon', '资源']}
+>
+
+700+开源的 CSS Icons 资源。
+
+</RepostCard>
+
+<RepostCard
+    name="cookiecutter/python-package-template"
+    link="https://github.com/TezRomacH/python-package-template"
+    tags={["python", "cookiecutter"]}
+>
+
+一个 cookiecutter 项目模版，专门用于 python package。包含的功能:
+
+- 支持 Python3.7 及以上版本
+- 使用 Poetry 作为依赖管理
+- 使用 `black`, `isort`, `pyupgrade` 来做代码格式化
+- 使用 `pre-commit` hooks 来运行上面的格式化工具
+- 使用 `mypy` 来做类型检查
+- 使用 `pytest` 来做测试
+- 使用 `darglint` 来检查 docstring
+- 使用 `safety` 和 `bandit` 来做安全检查
+- 做好的 `.editorconfig`, `.dockerignore`, `.gitignore`
+- …
+
+</RepostCard>
+
+<RepostCard
+    name="MIT课程 — The Missing Semester of Your CS Education"
+    link="https://missing.csail.mit.edu/"
+    tags={["MIT课程", "资源"]}
+>
+
+CS课堂对于一些重要的东西却从来没有教过：如何熟练使用工具。
+
+学生在学习中会话费数百小时使用这些工具，所以有必要进行系统学习。
+
+包括：编辑器（VIM）/ Shell 工具 / 数据处理工具 / 版本控制（Git）/ 安全和加密工具。。。
+
+</RepostCard>
