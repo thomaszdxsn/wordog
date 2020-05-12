@@ -6,6 +6,7 @@ import {NextSeo} from 'next-seo';
 import {ArticleLayout} from "../../layouts";
 import {getPostsMeta} from "../../server-utils";
 import {Metadata} from "../../interfaces";
+import {usePercentScrollAsTitle} from "../../utils";
 
 
 interface Props {
@@ -13,6 +14,7 @@ interface Props {
 }
 
 const PostPage: NextPage<Props> = ({metadata}) => {
+  usePercentScrollAsTitle();
   const Content = dynamic(
       () => import(`../../articles/tech/${metadata.filename}`),
       {ssr: false}

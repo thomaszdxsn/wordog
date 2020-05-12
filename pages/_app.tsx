@@ -1,9 +1,18 @@
 import React from 'react';
 import {AppProps} from "next/app";
-import {useRouter} from "next/router";
+import NProgress from 'nprogress';
+import Router, {useRouter} from "next/router";
 import Head from "next/head";
 import {DefaultSeo} from "next-seo/lib";
 import {buildURL} from "../utils";
+import '../styles.css'
+
+Router.events.on('routeChangeStart', url => {
+  console.log(`Loading: ${url}`);
+  NProgress.start()
+});
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
 
 const GoogleAnalyticsScript: React.FC = () => {
 
