@@ -4,9 +4,6 @@ const withMDX = require('@next/mdx')({
 
 
 const settings = {
-    pwa: {
-        dest: 'public'
-    },
     pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx']
 };
 

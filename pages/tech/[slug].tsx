@@ -6,7 +6,7 @@ import {NextSeo} from 'next-seo';
 import {ArticleLayout} from "../../layouts";
 import {getPostsMeta} from "../../server-utils";
 import {Metadata} from "../../interfaces";
-import {usePercentScrollAsTitle} from "../../utils";
+import {usePercentScrollAsTitle} from "utils";
 
 
 interface Props {

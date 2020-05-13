@@ -18,7 +18,7 @@
     "babel-plugin-inline-react-svg": "^1.1.1",
     "extract-mdx-metadata": "^1.0.0",
     "isomorphic-unfetch": "3.0.0",
-    "next": "latest",
+    "next": "^9.4.0",
     "next-pwa": "^2.3.3",
     "next-seo": "^4.4.0",
     "nprogress": "^0.2.0",
