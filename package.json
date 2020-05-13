@@ -7,7 +7,8 @@
     "build": "yarn run prebuild && next build",
     "start": "next start",
     "type-check": "tsc",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "build-storybook": "build-storybook -c .storybook -o storybook-out"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.5.9",
