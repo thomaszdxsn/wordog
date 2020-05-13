@@ -4,11 +4,11 @@
   "scripts": {
     "prebuild": "node prebuild.js",
     "dev": "yarn run prebuild && next",
-    "build": "yarn run prebuild && next build",
+    "build": "yarn run prebuild && next build && yarn build-storybook",
     "start": "next start",
     "type-check": "tsc",
     "storybook": "start-storybook",
-    "build-storybook": "build-storybook -c .storybook -o .storybook-out"
+    "build-storybook": "build-storybook -c .storybook -o public/storybook"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.5.9",
