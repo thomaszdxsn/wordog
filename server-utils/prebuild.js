@@ -1,6 +1,7 @@
 const fs = require('fs');
 const join = require('path').join;
 const extractMdxMeta = require('extract-mdx-metadata');
+const RSS = require('rss');
 
 const POSTS_DIR = join(process.cwd(), 'articles');
 
@@ -25,7 +26,7 @@ async function readPostDir(path) {
 
 
 async function getTechPostsMetadata() {
-    const techDir = join(POSTS_DIR, 'tech')
+    const techDir = join(POSTS_DIR, 'tech');
     return readPostDir(techDir)
 }
 
@@ -68,8 +69,52 @@ function genSiteMap() {
 `.trim(), 'utf-8');
 }
 
+
+function genRSS() {
+    const postsMeta = getPostsMeta();      // TODO: only tech now
+    const siteUrl = 'https://thomaszdxsn.com';
+    const pubDate = Object.values(postsMeta).flatMap(meta => meta).sort(
+        (prev, curr) => prev.date < curr.date ? 1 : -1
+    )[0].date;
+    const feed = new RSS({
+        title: "Thomaszdxsn\'s Blog",
+        description: "关于技术、读书、游戏、电影等等",
+        feed_url: `${siteUrl}/feeds.xml`,
+        site_url: siteUrl,
+        webMaster: 'thomaszdxsn',
+        language: 'zh-cn',
+        categories: ['技术', '读书', '游戏', '电影'],
+        ttl: 60 * 24,
+        pubDate: pubDate,
+    });
+    Object.entries(postsMeta).forEach(([category, metaSet]) => {
+        const translateCategory = (category) => (
+            {
+                tech: '技术'
+            }[category]
+        );
+
+        metaSet.sort((prev, curr) => prev.date < curr.date ? 1 : -1).forEach(meta => {
+            feed.item({
+                title: meta.title,
+                author: 'thomaszdxsn',
+                categories: [translateCategory(category)],
+                description: meta.description,
+                url: `${siteUrl}/${category}/${meta.slug}`,
+                guid: meta.slug,
+                date: meta.date,
+            })
+        })
+    });
+
+    const rssFile = join('public', 'rss.xml');
+    fs.writeFileSync(rssFile, feed.xml(true), 'utf-8')
+}
+
+
 (async () => {
-    // 必须先生成 metadata 才能生成 sitemap
+    // 必须先生成 metadata 才能生成后面的数据
     await genMetadata();
-    genSiteMap()
+    genSiteMap();
+    genRSS()
 })();
