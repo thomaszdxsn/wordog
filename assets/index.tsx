@@ -6,3 +6,4 @@ export {default as TextIcon} from './FileText.svg'
 export {default as ListIcon} from './List.svg'
 export {default as TagIcon} from './Tag.svg';
 export {default as NpmIcon} from './Npm.svg'
+export {default as RSSIcon} from './Rss.svg';

@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link'
 
 import {BasicLayout} from '../layouts';
-import {GithubIcon, ListIcon, MailIcon, TwitterIcon} from '../assets'
+import {GithubIcon, RSSIcon, MailIcon, TwitterIcon} from '../assets'
 import * as constants from '../constants';
 
 
@@ -13,9 +13,9 @@ const IndexPage = () => {
         <h1>Thomaszdxsn's blog</h1>
         <p className='quote'>{constants.BLOG_DESCRIPTION}</p>
         <div className="icon-container">
-          <Link href={'/tech'} passHref>
+          <Link href={'/rss.xml'} passHref>
             <a>
-              <ListIcon/>
+              <RSSIcon/>
             </a>
           </Link>
           <a href={constants.GITHUB_HOMEPAGE} target='_blank'>
