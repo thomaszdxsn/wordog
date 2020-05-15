@@ -1,5 +1,6 @@
 import React from "react";
 import {addDecorator} from "@storybook/react";
+import '../styles/index.css'
 
 
 const Center: React.FC = props => (

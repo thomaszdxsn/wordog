@@ -5,7 +5,8 @@ import Router, {useRouter} from "next/router";
 import Head from "next/head";
 import {DefaultSeo} from "next-seo/lib";
 import {buildURL} from "../utils";
-import '../styles.css'
+import "styles/index.css";
+import "styles/nprogress.css";
 
 Router.events.on('routeChangeStart', url => {
   console.log(`Loading: ${url}`);

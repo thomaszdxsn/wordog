@@ -8,7 +8,7 @@ interface Props {
 const CatalogBox: React.FC<Props> = () => {
   return (
    <nav>
-     <button>nav</button>
+     <button className={'text-white'}>nav</button>
    </nav>
   )
 };
