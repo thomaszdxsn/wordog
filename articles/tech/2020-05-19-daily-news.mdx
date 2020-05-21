@@ -1,0 +1,61 @@
+import {RepostCard} from '../../components'
+
+export const meta = {
+    author: 'thomaszdxsn',
+    title: '阅读日报第 9 期',
+    slug: '2020-05-21-daily-news',
+    tags: ['网络安全', '牛肉熟成', 'grepper', 'new.css'],
+    date: '2020-05-21',
+    description: 'GitHub每天有大量的人泄漏了自己的私钥；牛肉熟成到底是什么；Grepper是什么产品；无class的CSS库；'
+}
+
+# 阅读日报第 9 期
+
+<RepostCard
+    title="How I made $10K in bug bounties from GitHub secret leaks"
+    link="https://tillsongalloway.com/finding-sensitive-information-on-github/"
+    tags={["网络安全"]}
+    estimateMin={10}
+>
+
+GitHub 每天有大量的人意外上传了自己的密钥，即使删除了也依然保留在 commit 中。而且有一些信息是无意间泄漏的，比如 `.idea` 文件夹会保留在使用 JetBrain IDEA 工具时候的剪贴板内容。
+
+黑客利用代码自动搜索工具，可以获益巨大。
+
+</RepostCard>
+
+
+<RepostCard
+    title="牛肉熟成 | 和你一起慢慢变老的故事……"
+    link="https://daily.zhihu.com/story/9724046"
+    tags={["牛肉熟成"]}
+    estimateMin={10}
+>
+
+与潮汕人争分夺秒嗜新鲜牛肉的食物观不同，欧美人喜欢先让牛肉“冷静冷静”，让岁月这把有情的杀牛刀，在牛肉身上雕刻出神奇的风味与曼妙的质感。近年来，欧美的熟成牛肉之风也传入中国、日本等国。
+
+</RepostCard>
+
+
+<RepostCard
+    title="new.css"
+    link="https://github.com/xz/new.css"
+    tags={["repo", 'CSS']}
+>
+
+> A classless CSS framework to write modern websites using only HTML
+
+简而言之就是几套预设的 HTML 样式表。
+
+</RepostCard>
+
+<RepostCard
+    title="Grepper"
+    link="https://www.codegrepper.com/"
+>
+
+一个浏览器插件，可以在搜索代码问题的时候，智能推荐并高亮代码块。
+
+昨天晚上我在 Youtube 看到这个产品的广告，好奇它怎么盈利，官网介绍好像是赚 B端的钱。
+
+</RepostCard>
