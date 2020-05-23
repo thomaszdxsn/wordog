@@ -4,9 +4,9 @@
         <description><![CDATA[关于技术、读书、游戏、电影等等]]></description>
         <link>https://thomaszdxsn.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 21 May 2020 02:38:50 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 23 May 2020 07:00:58 GMT</lastBuildDate>
         <atom:link href="https://thomaszdxsn.com/feeds.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 21 May 2020 00:00:00 GMT</pubDate>
+        <pubDate>Sat, 23 May 2020 00:00:00 GMT</pubDate>
         <language><![CDATA[zh-cn]]></language>
         <webMaster><![CDATA[thomaszdxsn]]></webMaster>
         <ttl>1440</ttl>
@@ -14,6 +14,15 @@
         <category><![CDATA[读书]]></category>
         <category><![CDATA[游戏]]></category>
         <category><![CDATA[电影]]></category>
+        <item>
+            <title><![CDATA[阅读日报第 10 期]]></title>
+            <description><![CDATA[React所代表的现代框架究竟为前端带来了什么，没有它们反而更快；asyncio API详尽解释；使用jupyter来写书]]></description>
+            <link>https://thomaszdxsn.com/tech/2020-05-23-daily-news</link>
+            <guid isPermaLink="false">2020-05-23-daily-news</guid>
+            <category><![CDATA[技术]]></category>
+            <dc:creator><![CDATA[thomaszdxsn]]></dc:creator>
+            <pubDate>Sat, 23 May 2020 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[阅读日报第 9 期]]></title>
             <description><![CDATA[GitHub每天有大量的人泄漏了自己的私钥；牛肉熟成到底是什么；Grepper是什么产品；无class的CSS库；]]></description>
