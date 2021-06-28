@@ -1,13 +1,14 @@
 module.exports = {
+  mode: "jit",
   purge: [
-      './components/**/*.tsx',
-      './components/*.tsx',
-      './pages/**/*.tsx',
-      './pages/*.tsx'
+    "./src/components/**/*.res",
+    "./src/layouts/**/*.res",
+    "./src/*.res",
+    "./src/**/*.mjs",
   ],
-  theme: {
-    extend: {},
+  theme: {},
+  variants: {
+    width: [],
   },
-  variants: {},
-  plugins: []
+  plugins: [],
 };
